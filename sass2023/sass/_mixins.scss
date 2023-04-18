@@ -1,0 +1,22 @@
+@use 'sass:math';
+
+@mixin mostrar-flex($justify, $align){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin imagen-fondo($image, $position, $size, $repeat) {
+  background: {
+    image: $image;
+    position:$position ;
+    size: $size;
+    repeat: $repeat;
+  };
+}
+
+@function pixeles-rem ($pixeles) {
+  $rem: math.div($pixeles, 16) * 1rem;
+
+  @return $rem;
+}

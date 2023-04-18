@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/* los partials son fragmentos que pueden modulariozar el codigo 
+   estos archivos se nombran iniciando con guion bajo _nombre.scss 
+   los partials no necesitan ser transpilados y no crean un nuevo archivo css
+   para ser usados deben ser referenciados en el archivo scss principal de estilos sass
+   */
+/* partials dentro de un partial */
+/* importando mixin */
+.nav {
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+/* el anidamiento de selectores es mas sencillo con sass */
+.nav {
+  background-color: teal;
+}
+.nav ul {
+  color: aqua;
+}
+.nav ul li {
+  color: rebeccapurple;
+}
+
+/* pero seleccionar elementos directamente no se recomienda, aunque se encuentren anidados */
+/* es posible aplicar metodologia BEM con un selector especial en sass */
+/* parent element -> & */
+/* estas propiedades van sin comillas */
+/* los valores tambien aplican a nombres de propiedades */
+/* hasta los nombres de selectores */
+.nav {
+  background-color: rgb(165, 184, 202);
+  padding: 15px;
+  overflow: hidden;
+  /* observacion
+     item y container no se encuentran al mismo nivel
+     item esta dentro de container, pero se estan escribiendo al mismo nivel porque
+     esta caracteristica de sass realiza la anidacion con la concatenacion de nombres y no directamente con los elementos
+     es como si escribieramos:
+     .nav__contayner y .nav__item 
+     aunque en el index no estan en la misma jerarquia
+     es una mejor forma de aprovechar BEM y escribir selectores mas limpios
+  */
+  /* tambien se aplica a las reglas @media */
+}
+.nav__container {
+  box-shadow: 150px 100px 200px #000;
+  padding: 10px;
+  /* nombre de propiedad interpolado */
+  display: flex;
+  /*justify-content: space-evenly;
+  align-items: center;*/
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* de esta forma es como si se seleccionara .nav__container */
+}
+.nav__item {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.2s color;
+  /* lo mismo si queremos escribir pseudo clases */
+}
+.nav__item--active {
+  font-size: 1.2em;
+}
+.nav__item:hover {
+  color: orange;
+}
+@media (min-width: 764px) {
+  .nav__container {
+    justify-content: start;
+  }
+  .nav__item {
+    margin: 0 20px;
+  }
+}
+
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hero__container {
+  height: calc(100vh - 70px);
+  /*
+  background-image: linear-gradient(#4e5dff6d, #d760ff82), url(../img/Golden+Coil+Notebooks-1.jpg);
+    recordatorio: se puede usar url despues del gradiente
+    se suplen estas propiedades por un mixin
+  background-position: center;
+  background-size: cover;
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(78, 93, 255, 0.4274509804), rgba(215, 96, 255, 0.5098039216)), url(../img/Golden+Coil+Notebooks-1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* funciona añadiendo dos fondos */
+}
+.hero__texts {
+  color: #ffffff;
+  width: 80vw;
+}
+.hero__title {
+  font-size: 3.375rem;
+  font-weight: 500;
+}
+.hero__paragraph {
+  font-size: 0.875rem;
+  margin: 20px 0;
+}
+
+/* creacion de variables comienza con $ */
+/* almacenan valores referenciando a la variable */
+/* no hace falta decir cuanto poder tiene usar variables */
+/*
+h2 {
+  color: $variable1-color;
+  font-size: 3rem;
+}
+
+p {
+  color: $variable1-color;
+}
+*/
+/* importando partial */
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,44 @@
+thead {
+  display: none;
+}
+
+tr {
+  margin: 10px 10px;
+  display: grid;
+  border: 1px solid blue;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+td {
+  border: 1px solid red;
+  margin: 5px;
+}
+
+td[data-label="Usuario"] {
+  grid-column: 2 /3;
+  grid-row: 1 /2;
+}
+
+td[data-label="Email"] {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.row-btns {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newLabelUser {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.newLabelEmail {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}

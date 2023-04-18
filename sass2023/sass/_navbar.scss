@@ -1,0 +1,97 @@
+/* los partials son fragmentos que pueden modulariozar el codigo 
+   estos archivos se nombran iniciando con guion bajo _nombre.scss 
+   los partials no necesitan ser transpilados y no crean un nuevo archivo css
+   para ser usados deben ser referenciados en el archivo scss principal de estilos sass
+   */
+
+/* partials dentro de un partial */
+@use 'variables' as v;
+/* importando mixin */
+@use 'mixins' as flex;
+
+.nav {
+  background-color: v.$color-azul;
+  color: #fff;
+}
+
+/* el anidamiento de selectores es mas sencillo con sass */
+
+.nav {
+  background-color: teal;
+
+  ul {
+    color: aqua;
+
+    li {
+      color: rebeccapurple;
+    }
+  }
+}
+
+/* pero seleccionar elementos directamente no se recomienda, aunque se encuentren anidados */
+/* es posible aplicar metodologia BEM con un selector especial en sass */
+/* parent element -> & */
+
+$flexible: flex;
+/* estas propiedades van sin comillas */
+
+/* los valores tambien aplican a nombres de propiedades */
+$muestra: 'display';
+
+/* hasta los nombres de selectores */
+$barra-superior: '.nav';
+
+#{$barra-superior} {
+
+  background-color: rgb(165, 184, 202);
+  padding: 15px;
+  overflow: hidden;
+
+  &__container {
+    box-shadow: 150px 100px 200px #000;
+    padding: 10px;
+    /* nombre de propiedad interpolado */
+    #{$muestra}: $flexible;
+    /*justify-content: space-evenly;
+    align-items: center;*/
+    @include flex.mostrar-flex(space-evenly, center);
+    /* de esta forma es como si se seleccionara .nav__container */
+  }
+
+  &__item {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.2s color;
+
+    &--active {
+      font-size: 1.2em;
+    }
+
+    /* lo mismo si queremos escribir pseudo clases */
+    &:hover {
+      color: v.$color-naranja;
+    }
+  }
+
+  /* observacion
+     item y container no se encuentran al mismo nivel
+     item esta dentro de container, pero se estan escribiendo al mismo nivel porque
+     esta caracteristica de sass realiza la anidacion con la concatenacion de nombres y no directamente con los elementos
+     es como si escribieramos:
+     .nav__contayner y .nav__item 
+     aunque en el index no estan en la misma jerarquia
+     es una mejor forma de aprovechar BEM y escribir selectores mas limpios
+  */
+
+  /* tambien se aplica a las reglas @media */
+  @media (min-width: 764px) {
+    &__container {
+      justify-content: start;
+    }
+
+    &__item {
+      margin: 0 20px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/* creacion de variables comienza con $ */
+/* almacenan valores referenciando a la variable */
+/* no hace falta decir cuanto poder tiene usar variables */
+$variable1-color: cornflowerblue;
+
+/*
+h2 {
+  color: $variable1-color;
+  font-size: 3rem;
+}
+
+p {
+  color: $variable1-color;
+}
+*/
+
+/* importando partial */
+@use 'navbar';
+@use 'reset';
+//@use 'animations';
+@use 'hero';

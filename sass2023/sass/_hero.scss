@@ -1,0 +1,42 @@
+
+@use 'mixins' as mxn;
+
+.hero {
+  &__container {
+    height: calc(100vh - 70px);
+    /*
+    background-image: linear-gradient(#4e5dff6d, #d760ff82), url(../img/Golden+Coil+Notebooks-1.jpg);
+      recordatorio: se puede usar url despues del gradiente
+      se suplen estas propiedades por un mixin
+    background-position: center;
+    background-size: cover;
+    */
+
+    @include mxn.mostrar-flex(center, center);
+    @include mxn.imagen-fondo(
+      (
+        linear-gradient(#4e5dff6d, #d760ff82), 
+        url(../img/Golden+Coil+Notebooks-1.jpg)
+      ), 
+      center, 
+      cover, 
+      no-repeat
+    );
+    /* funciona añadiendo dos fondos */
+  }
+
+  &__texts {
+    color: #ffffff;
+    width: 80vw;
+  }
+
+  &__title {
+    font-size: mxn.pixeles-rem(54);
+    font-weight: 500;
+  }
+
+  &__paragraph {
+    font-size: mxn.pixeles-rem(14);
+    margin: 20px 0;
+  }
+}
