@@ -1,0 +1,29 @@
+{
+  "frameworks":[
+    {
+      "id":1,
+      "name":"React",
+      "url":"https://react.dev/"
+    },
+    {
+      "id":2,
+      "name":"Angular",
+      "url":"https://angularjs.org/"
+    },
+    {
+      "id":3,
+      "name":"Vue",
+      "url":"https://vuejs.org/"
+    },
+    {
+      "id":4,
+      "name":"Svelte",
+      "url":"https://svelte.dev/"
+    },
+    {
+      "id":5,
+      "name":"Lit",
+      "url":"https://lit.dev/"
+    }
+  ]
+}

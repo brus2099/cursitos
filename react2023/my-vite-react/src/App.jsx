@@ -5,10 +5,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Componente from './components/Componente'
+import Propiedades from './components/Propiedades'
+import Estado from './components/Estado'
+import RenderizadoCondicional from './components/RenderizadoCondicional'
+import RenderizadoElementos from './components/RenderizadoElementos';
 
 function App() {
   const [count, setCount] = useState(0);
-  let name="Bruno";
+  let name = "Bruno";
   let auth = false;
   let arrayGenerico = ["pinga", "webo", "elemento", "array"];
 
@@ -37,14 +41,14 @@ function App() {
         </p>
         <ul>
           {/* las renderizaciones de listas ocupan un atributo key */}
-          { arrayGenerico.map( (elem, index) => <li key={ index }>{ elem }</li>) }
+          {arrayGenerico.map((elem, index) => <li key={index}>{elem}</li>)}
         </ul>
         <h2>Pinga webo mamgueboo {name}</h2>
         <p className="clase">
           {/* no es HTML!!!!!!! */}
-          { count % 2 == 0 ? "Usuario está logueado":'pingawebo 2'}
-          { 2 + 3 }
-          { /* cualquier expresion que devualva un solo valor es valida */ }
+          {count % 2 == 0 ? "Usuario está logueado" : 'pingawebo 2'}
+          {2 + 3}
+          { /* cualquier expresion que devualva un solo valor es valida */}
         </p>
       </div>
       <label htmlFor="weboNombre">Nombre</label>
@@ -55,13 +59,58 @@ function App() {
       </p>
       {/** no es valido añadir elementos e interpolaciones fuera de la etiqueta contenedora */}
 
-      {/* mis componentes
+      {/* mis componentes 
           dos formas de escribirlos
       */}
       <section>
         {/* componentes aceptan propiedades */}
         <Componente msg="pinga"></Componente>
         <Componente msg="webo" />
+      </section>
+      <hr />
+      <section>
+        {/* 
+          5 
+          las propiedades son valores que recibe el hijo del padre y se agrupan en un objeto props
+          cada atributo de props son las propiedades que se pasan desde el padre
+          son inmutables, de solo lectura
+          strings, numeros, bools
+          objetos, funciones, otros componentes, fragmentos de jsx
+          cuando es componente de clase, la propiedad props se declara en el constructor
+        */}
+        <h2>video 5</h2>
+        <Propiedades
+          cadena="Esto es una cadena de texto"
+          numero={99}
+          bool={true}
+          arreglo={[1, 2, 3]}
+          objeto={{
+            nombre: 'brus2099',
+            correo: 'sexo.sexo@sexo.com'
+          }}
+          funcion={num => num * num}
+          elementoReact={<i>elemento React como propiedad</i>}
+          componenteReact={<Componente msg={'pasado como prop en una sintaxis terrible'} />}
+        />
+        {/* instalando prop-types */}
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 6</h2>
+        <Estado />
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 7</h2>
+        <RenderizadoCondicional />
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 8</h2>
+        <RenderizadoElementos />
       </section>
     </div>
   )
@@ -73,3 +122,5 @@ export default App
 // antes los componentes de clase eran los que guardaban logica, y los 'tontos' eran ocmponentes estaticos
 // en React 16.0.8 se introdujeron los hooks
 // los componentes de funciones ya incluian estado
+
+
