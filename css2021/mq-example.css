@@ -1,0 +1,39 @@
+* {
+  font-family: 'Poppins';
+}
+
+.desktop {
+  display: none;
+}
+
+.tablet {
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  
+  .desktop {
+    display: block;
+  }
+
+}
+
+@media screen and (min-width: 500px) and (max-width: 799px) {
+
+  .tablet {
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 499px) {
+  
+  .mobile {
+    display: block;
+  }
+
+} 

@@ -1,0 +1,96 @@
+*:not(ol):not(li) {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+label {
+    display: inline-block;
+    margin: 10px 3px;
+}
+
+[type="text"], textarea {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 3px;
+    display: block;
+    border: none;
+    border-bottom: 2px solid rgb(255, 58, 58);
+    transition: all 0.1s ease-in-out;
+}
+
+[type="text"]:hover, textarea:hover {
+    border-bottom: 4px solid rgb(255, 58, 58);
+}
+
+[type="text"]:focus {
+    background-color: #f5f5f5;
+    width: 20%;
+    border-bottom: 4px solid rgb(255, 58, 58);
+}
+
+textarea:focus {
+    border-bottom: 4px solid rgb(255, 58, 58);
+    background-color: #f5f5f5;
+}
+
+
+[name="search"] {
+    background-image: url('lupa.png');
+    background-position: 10px 10px;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+[name="bio"] {
+    resize: horizontal;
+    width: 20%;
+    height: 200px;
+    resize: none;
+}
+
+[name="country"] {
+  display: block;
+    width: 200px;
+    padding: 16px;
+    border: 1px solid red;
+    border-radius: 6px;
+    background: #f1f1f1;
+}
+
+
+
+
+
+.counters {
+    counter-reset: let;
+}
+
+.counters h1 {
+    counter-reset: sublet;
+}
+
+.counters h1::before {
+    counter-increment: let;
+    content: "My let " counter(let) ": ";
+}
+
+.counters h2::before {
+    counter-increment: sublet;
+    content: "My sub let: "counter(let) "." counter(sublet) " ";
+}
+
+
+
+ol {
+    counter-reset: ol-list;
+    list-style-type: none;
+}
+
+li::before {
+    counter-increment: ol-list;
+    content: counters(ol-list, ".") " ";
+    /* I don't understand... yet... */
+}
