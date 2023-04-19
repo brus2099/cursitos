@@ -1,10 +1,16 @@
+import React from 'react';
+// para aplicaciones antiguas
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Componente from './components/Componente'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  let name="Bruno";
+  let auth = false;
+  let arrayGenerico = ["pinga", "webo", "elemento", "array"];
 
   return (
     <div className="App">
@@ -21,16 +27,49 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
+        {/* comentarios en jsx */}
+        {/* interpolacion de codigo js en jsx
+            para añadir los valores en propiedades del elemento es sin comillas
+            las comillas son para string
+        */}
+        <p id={name}>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-        <h2>Pinga webo mamgueboo</h2>
+        <ul>
+          {/* las renderizaciones de listas ocupan un atributo key */}
+          { arrayGenerico.map( (elem, index) => <li key={ index }>{ elem }</li>) }
+        </ul>
+        <h2>Pinga webo mamgueboo {name}</h2>
+        <p className="clase">
+          {/* no es HTML!!!!!!! */}
+          { count % 2 == 0 ? "Usuario está logueado":'pingawebo 2'}
+          { 2 + 3 }
+          { /* cualquier expresion que devualva un solo valor es valida */ }
+        </p>
       </div>
+      <label htmlFor="weboNombre">Nombre</label>
+      {/** los id se escriben normal */}
+      <input type="text" id="weboNombre" />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      {/** no es valido añadir elementos e interpolaciones fuera de la etiqueta contenedora */}
+
+      {/* mis componentes
+          dos formas de escribirlos
+      */}
+      <section>
+        {/* componentes aceptan propiedades */}
+        <Componente msg="pinga"></Componente>
+        <Componente msg="webo" />
+      </section>
     </div>
   )
 }
 
 export default App
+
+// los componentes pueden tener o no estado
+// antes los componentes de clase eran los que guardaban logica, y los 'tontos' eran ocmponentes estaticos
+// en React 16.0.8 se introdujeron los hooks
+// los componentes de funciones ya incluian estado
