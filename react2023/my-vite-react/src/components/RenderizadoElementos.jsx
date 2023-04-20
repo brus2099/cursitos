@@ -23,7 +23,6 @@ class RenderizadoElementos extends Component {
   }
 
   render() {
-    console.log(data);
     return (
       <div className="">
         <h2>Renderizado de elementos</h2>
