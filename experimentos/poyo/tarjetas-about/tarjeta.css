@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+
+}
+
+.tarjeta {
+  height: 100vh;
+  transition: 0.2s width;
+}
+
+.tj-1 {
+  background-color: rgb(113, 211, 211);
+  width: 50vw;
+}
+
+.tj-2 {
+  background-color: rgb(255, 117, 117);
+  width: 16vw;
+}
+
+.tj-3 {
+  background-color: rgb(118, 134, 255);
+  width: 16vw;
+}
+
+.tj-4 {
+  background-color: rgb(255, 255, 122);
+  width: 16vw;
+}
+
+.hovered-card {
+  width: 46vw;
+}
+
+.hovered-main {
+  width: 52vw;
+}
+
+.no-hovered-main {
+  width: 22vw;
+}
