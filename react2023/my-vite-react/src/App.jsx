@@ -10,6 +10,8 @@ import Estado from './components/Estado'
 import RenderizadoCondicional from './components/RenderizadoCondicional'
 import RenderizadoElementos from './components/RenderizadoElementos';
 import { EventosES6, EventosES7, MasEventosAwevo } from './components/Eventos';
+import ComunicacionComponentes from './components/ComunicacionComponentes';
+import CicloVida from './components/CicloVida';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -120,6 +122,18 @@ function App() {
         <EventosES6 />
         <EventosES7 />
         <MasEventosAwevo />
+      </section>
+      <hr />
+
+      <section>
+        <h2>Video 12</h2>
+        <ComunicacionComponentes />
+      </section>
+      <hr />
+
+      <section>
+        <h2>Video 13</h2>
+        <CicloVida />
       </section>
     </div>
   )
