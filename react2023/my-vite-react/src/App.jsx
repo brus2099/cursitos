@@ -12,6 +12,7 @@ import RenderizadoElementos from './components/RenderizadoElementos';
 import { EventosES6, EventosES7, MasEventosAwevo } from './components/Eventos';
 import ComunicacionComponentes from './components/ComunicacionComponentes';
 import CicloVida from './components/CicloVida';
+import AjaxApis from './components/AjaxApis';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -134,6 +135,12 @@ function App() {
       <section>
         <h2>Video 13</h2>
         <CicloVida />
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 14</h2>
+        <AjaxApis />
       </section>
     </div>
   )
