@@ -11,8 +11,11 @@ const Pokemono = props => {
 
 class AjaxApis extends Component {
 
-  state = {
-    pokemonos: []
+  constructor(props) {
+    super(props);
+    this.state = {
+      pokemonos: []
+    }
   }
 
   componentDidMount() {
@@ -22,24 +25,36 @@ class AjaxApis extends Component {
       .then(json => {
         console.log(json);
         json.results.forEach(pokemono => {
-          fetch(pokemono.url).
-            then(res => res.json())
+          fetch(pokemono.url)
+            .then(res => {
+              return res.json()
+            })
             .then(json => {
-              console.log(json);
               let pokemono = {
                 id: json.id,
                 name: json.name,
                 avatar: json.sprites.front_default
-              }
+              };
+              console.log(pokemono)
+
+              let pokemonos = [...this.state.pokemonos, pokemono];
+              
+              this.setState({ pokemonos });
             });
         });
       });
   }
 
+  
+
   render() {
     return (
       <>
         <h2>Peticiones Asincronas con Ajax y APIs</h2>
+        <button onClick={updatePokemonos}>Consultar estado</button>
+        {
+          this.state.pokemonos.map(pokemono => <Pokemono key={pokemono.id} name={pokemono.name} avatar={pokemono.avatar} />)
+        }
       </>
     )
   }
