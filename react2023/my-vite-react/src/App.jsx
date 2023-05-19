@@ -13,6 +13,8 @@ import { EventosES6, EventosES7, MasEventosAwevo } from './components/Eventos';
 import ComunicacionComponentes from './components/ComunicacionComponentes';
 import CicloVida from './components/CicloVida';
 import AjaxApis from './components/AjaxApis';
+import HookUseState from './components/HookUseState';
+import HookUseEffect from './components/HookUseEffect'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -106,6 +108,7 @@ function App() {
       </section>
       <hr />
 
+        <HookUseEffect />
       <section>
         <h2>video 7</h2>
         <RenderizadoCondicional />
@@ -142,6 +145,21 @@ function App() {
         <h2>video 14</h2>
         <AjaxApis />
       </section>
+      <hr />
+
+      <section>
+        <h2>A huevo hooks!!</h2>
+        <h2>video 15</h2>
+        <p>Leer comentario dentro del archivo del componente AjaxAis</p>
+        <h2>video 16</h2>
+        <HookUseState titulo="followers" />
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 17</h2>
+      </section>
+
     </div>
   )
 }

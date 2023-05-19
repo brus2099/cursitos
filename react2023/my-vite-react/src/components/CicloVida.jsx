@@ -29,7 +29,8 @@ class CicloVida extends Component {
 
   // despues de renderizar0
   componentDidMount() {
-    console.log('El componente ya se encuentra en el DOM');
+
+    // console.log('El componente ya se encuentra en el DOM');
   }
 
   componentDidUpdate(prevProps, prevState) {
