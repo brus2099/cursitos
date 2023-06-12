@@ -21,6 +21,7 @@ function App() {
   let name = "Bruno";
   let auth = false;
   let arrayGenerico = ["pinga", "webo", "elemento", "array"];
+  let  showComponent = null;
 
   return (
     <div className="App">
@@ -143,7 +144,11 @@ function App() {
 
       <section>
         <h2>video 14</h2>
-        <AjaxApis />
+        {
+          showComponent == 'webo pinga mamaguebo' ? 
+          <AjaxApis /> : 
+          '<p>descomenta el componente AjaxApis</p>'
+        }
       </section>
       <hr />
 
@@ -158,6 +163,7 @@ function App() {
 
       <section>
         <h2>video 17</h2>
+        <HookUseEffect />
       </section>
 
     </div>
