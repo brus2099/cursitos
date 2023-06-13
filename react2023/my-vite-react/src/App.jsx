@@ -15,6 +15,7 @@ import CicloVida from './components/CicloVida';
 import AjaxApis from './components/AjaxApis';
 import HookUseState from './components/HookUseState';
 import HookUseEffect from './components/HookUseEffect'
+import RelojHooks from './components/RelojHooks';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -109,7 +110,6 @@ function App() {
       </section>
       <hr />
 
-        <HookUseEffect />
       <section>
         <h2>video 7</h2>
         <RenderizadoCondicional />
@@ -164,6 +164,11 @@ function App() {
       <section>
         <h2>video 17</h2>
         <HookUseEffect />
+      </section>
+
+      <section>
+        <h2>video 18</h2>
+        <RelojHooks />
       </section>
 
     </div>
