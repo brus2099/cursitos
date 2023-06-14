@@ -63,7 +63,7 @@ class AjaxApis extends Component {
       <>
         <h2>Peticiones Asincronas con Ajax y APIs</h2>
         <p> </p>
-        { this.state.pokemonos.length === 0 ? (
+        {this.state.pokemonos.length === 0 ? (
           <h3>Cargando...</h3>
         ) : (this.state.pokemonos.map(pokemono =>
           <Pokemono

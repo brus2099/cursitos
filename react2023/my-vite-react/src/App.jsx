@@ -16,13 +16,15 @@ import AjaxApis from './components/AjaxApis';
 import HookUseState from './components/HookUseState';
 import HookUseEffect from './components/HookUseEffect'
 import RelojHooks from './components/RelojHooks';
+import AjaxHooks from './components/AjaxHooks';
+import HooksPersonalizados from './components/HooksPersonalizados';
 
 function App() {
   const [count, setCount] = useState(0);
   let name = "Bruno";
   let auth = false;
   let arrayGenerico = ["pinga", "webo", "elemento", "array"];
-  let  showComponent = null;
+  let showComponent = null;
 
   return (
     <div className="App">
@@ -145,9 +147,9 @@ function App() {
       <section>
         <h2>video 14</h2>
         {
-          showComponent == 'webo pinga mamaguebo' ? 
-          <AjaxApis /> : 
-          '<p>descomenta el componente AjaxApis</p>'
+          false ?
+            <AjaxApis /> :
+            'quita el condicional en AjaxApis'
         }
       </section>
       <hr />
@@ -165,10 +167,25 @@ function App() {
         <h2>video 17</h2>
         <HookUseEffect />
       </section>
+      <hr />
 
       <section>
         <h2>video 18</h2>
         <RelojHooks />
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 19</h2>
+        {true ?
+          <p>quita el condicional en AjaxHooks</p> :
+          <AjaxHooks />}
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 20</h2>
+        <HooksPersonalizados />
       </section>
 
     </div>

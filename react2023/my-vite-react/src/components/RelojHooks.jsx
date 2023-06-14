@@ -22,6 +22,7 @@ function RelojHooks(props) {
       clearInterval(temporizador);
     }
 
+    // esta mamada no desmonta nada >:( 
     return () => {
       console.log('Fase de desmontaje');
       clearInterval(temporizador);
