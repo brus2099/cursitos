@@ -18,6 +18,7 @@ import HookUseEffect from './components/HookUseEffect'
 import RelojHooks from './components/RelojHooks';
 import AjaxHooks from './components/AjaxHooks';
 import HooksPersonalizados from './components/HooksPersonalizados';
+import Referencias from './components/Referencias';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -186,6 +187,12 @@ function App() {
       <section>
         <h2>video 20</h2>
         <HooksPersonalizados />
+      </section>
+      <hr />
+
+      <section>
+        <h2>video 21</h2>
+        <Referencias />
       </section>
 
     </div>
