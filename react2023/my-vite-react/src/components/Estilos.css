@@ -1,0 +1,28 @@
+.estilo {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.slogan {
+  color: rgb(255, 255, 255);
+  font-size: 1.7em;
+  font-weight: 600;
+  background: rgb(0, 0, 0);
+  padding: 60px;
+  margin: 30px auto;
+  text-transform: uppercase;
+  width: 200px;
+  font-family: Tahoma, sans-serif;
+  transition: 0.2s all;
+}
+
+.slogan:hover {
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 20px 20px 0 #000000;
+}
+

@@ -60,8 +60,8 @@ const Referencias = () => {
   return (
     <>
       <h2>Referencias</h2>
-      <button id="menu-btn" ref={refMenu} onClick={handdleToggleMenu}>Menú</button>
-      <nav id="menu" ref={refMenuBtn} style={{display: "none"}}>
+      <button id="menu-btn" ref={refMenuBtn} onClick={handdleToggleMenu}>Menú</button>
+      <nav id="menu" ref={refMenu} style={{display: "none"}}>
         <a href="#">Sección 1</a>
         <br />
         <a href="#">Sección 2</a>
@@ -75,6 +75,8 @@ const Referencias = () => {
       </nav>
     </>
   );
+  // si varios elementos tienen el mismo ref, lo que estemos haciendo solo se va a aplicar al ultimo elemento
+  // interesante
 };
 
 export default Referencias;

@@ -1,0 +1,22 @@
+/*
+  3. agregando estilos en modulos
+  el archivo contiene clases que se importan en el componente
+    import Estilos.module.css from './Estilos.module.css'
+  y se usan en el componente como clases de css
+    <div className={Estilos.error}>
+*/
+
+.error {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.success {
+  color: #fff;
+  background-color: #198754;
+}
+
+.btnInitial {
+  background-color: #555;
+  color: #fff;
+}

@@ -3,6 +3,9 @@ import React from 'react';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+/**
+ * forma no 1: importando la hoja de estilos
+ */
 import './App.css'
 import Componente from './components/Componente'
 import Propiedades from './components/Propiedades'
@@ -19,6 +22,9 @@ import RelojHooks from './components/RelojHooks';
 import AjaxHooks from './components/AjaxHooks';
 import HooksPersonalizados from './components/HooksPersonalizados';
 import Referencias from './components/Referencias';
+import Formularios from './components/Formularios';
+import Estilos from './components/Estilos';
+import StyledComponents from './components/StyledComponents';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -194,6 +200,26 @@ function App() {
         <h2>video 21</h2>
         <Referencias />
       </section>
+      <hr />
+
+      <section>
+        <h2>video 22</h2>
+        <Formularios />
+      </section>
+      <br /><hr />
+
+      <section>
+        <h2>video 23</h2>
+        <Estilos />
+      </section>
+      <hr />
+
+      <section>
+        <h2>video24</h2>
+        <StyledComponents />
+      </section>
+
+      <br /><br /><br /><br /><br />
 
     </div>
   )

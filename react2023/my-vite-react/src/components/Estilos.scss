@@ -1,0 +1,22 @@
+/*
+4. estilos con sass
+se instala sass con npm install sass
+se crea el archivo Estilos.scss
+se importa en el componente con import './Estilos.scss';
+se añaden como clases a los elementos
+*/
+$color-sass: #ff69b4;
+
+.bg-sass {
+  color: #fff;
+  padding: 10px;
+  margin: 0 auto;
+  width: 150px;
+  border-radius: 10px;
+  background-color: $color-sass;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken($color-sass, 10%);
+  }
+}
