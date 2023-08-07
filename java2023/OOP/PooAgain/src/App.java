@@ -28,21 +28,6 @@ public class App {
         // incluso el error dice "The field ProductoTienda.nombre is not visible"
 
         
-
-
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    
-    int a = Integer.parseInt(br.readLine());
-    int b = Integer.parseInt(br.readLine());
-    int c = Integer.parseInt(br.readLine());
-
-    double insideRoot = ( b * b ) - ( 4 * a * c );
-    double squareRootResult = Math.sqrt(insideRoot);
-
-    double firstRoot = ( -b + squareRootResult ) / ( 2 * a );
-    double secondRoot = ( -b - squareRootResult ) / ( 2 * a );
-
-    System.out.println(firstRoot + " " + secondRoot);
   
 
     }
