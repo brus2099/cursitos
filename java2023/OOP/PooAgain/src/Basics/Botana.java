@@ -1,5 +1,7 @@
+package Basics;
 // solo por usar extends ProductoTienda, Botana ya tiene todos los metodos y atributos de ProductoTienda
 // esto es herencia
+
 public class Botana extends ProductoTienda {
 
     private String sabor;

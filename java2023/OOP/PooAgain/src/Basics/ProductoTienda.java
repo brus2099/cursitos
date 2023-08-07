@@ -1,3 +1,4 @@
+package Basics;
 public class ProductoTienda {
 
     private int id;

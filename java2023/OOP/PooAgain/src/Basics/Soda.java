@@ -1,3 +1,4 @@
+package Basics;
 public class Soda extends ProductoTienda {
 
     private String sabor;
