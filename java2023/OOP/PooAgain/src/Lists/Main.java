@@ -32,6 +32,7 @@ public class Main {
     // estan pensadas para ir de registro en registro
     List<Person> list2 = new LinkedList<Person>();
     // se pueden añadir datos al final
+    list2.clear();
     list2.add(new Person(1, "Brus", 24));
     list2.add(new Person(2, "Ana", 21));
     list2.add(new Person(3, "Brandon", 22));
@@ -44,13 +45,14 @@ public class Main {
     // si se pone al fina, el indice debe respetar la longitud actual de la lista
     // i.e. len = 4, index = 3 insert = 4
     // list2.add(4, new Person(5, "YoshInicio", 23));
-
-    for (Person p : list2) {
-      System.out.println(p.getName());
-    }
+    /*
+     * for (Person p : list2) {
+     * System.out.println(p.getName());
+     * }
+     */
 
     // si existen diferencias entre ArrayList y LinkedList
-    
+
     // Uso recomendado:
     // ArrayList: Se recomienda cuando se necesita un acceso rápido por índice y las
     // operaciones de inserción y eliminación no son frecuentes.
@@ -58,21 +60,29 @@ public class Main {
     // inserción o eliminación en el medio de la lista, y el acceso por índice no es
     // una prioridad.
 
-    /*  
     list.remove(0); // O(1)
-  
-    list2.remove(0); // O(n) porque:
-    Persona personaBorrar = new Person(1, "Brus", 24);
-    for (Persona p:list2) {
-      if (p.equals(personaBorrar)) {
+
+    // list2.remove(0); // O(n) porque:
+    Person personaBorrar = new Person(2, "Ana", 21);
+    for (Person p : list2) {
+      if (p.getName().equals(personaBorrar.getName())) {
+        // p.equals(personaBorrar) no funcionaria porque se estaria comparando la
+        // referencia de memoria
         list2.remove(p);
         break;
       }
-    }  
-    o sea que es un desmadre de rendimiento eliminar un elemento de una linkedlist
-    */
+      // o sea que es un desmadre de rendimiento eliminar un elemento de una
+      // linkedlist
+    }
 
-    
+    // metodos extra que no hace falta probar para que sirven porque se intuyen
+    /*
+      list.size(); para ambos
+      list2.getFirst(); y getLast(); para linkedlist
+      list.clear(); para ambos
+      list.isEmpty(); para ambos que pregunta si esta vacia
+      
+     */
 
   }
 
