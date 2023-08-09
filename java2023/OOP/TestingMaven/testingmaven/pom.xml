@@ -18,6 +18,13 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.gzoltar</groupId>
+            <artifactId>com.gzoltar.test</artifactId>
+            <version>1.7.3</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-pubsublite</artifactId>
             <version>1.12.12</version>
