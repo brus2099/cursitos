@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class Stacks {
   public static void main(String[] args) {
-    
+
     Stack<Integer> stack = new Stack<Integer>();
     System.out.println(stack);
     System.out.println("empty?..." + stack.empty());
@@ -36,14 +36,33 @@ public class Stacks {
 
     // es eso, una pila
     /*
-        |___|
-        |___|
-        | 4 | <- peek
-        | 3 | 
-        | 2 | 
-        | 1 |
-        |___|
-    */
+     * |___|
+     * |___|
+     * | 4 | <- peek
+     * | 3 |
+     * | 2 |
+     * | 1 |
+     * |___|
+     */
+
+    // Excepciones
+
+    // int resultado = 3 / 0; // ArithmeticException - no se puede dividir por cero
+    try {
+      System.out.println(3 / 0);
+    } catch (Exception e) {
+      System.out.println("No se puede dividir por cero");
+    }
+
+    int edades[] = { 10, 20, 30, 40, 50 };
+    // System.out.println(edades[5]); // ArrayIndexOutOfBoundsException - el indice no existe
+    try {
+      System.out.println(edades[5]);
+    } catch (Exception e) {
+      System.out.println("No existe ese indice");
+    }
+
+    System.out.println("La ejecucion continua");
 
   }
 }
